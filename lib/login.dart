@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 
 import './loginData/up.dart';
-import './basepage.dart';
 
 class Loginner extends StatefulWidget {
   final Function resetter;
@@ -43,9 +43,52 @@ class _LoginnerState extends State<Loginner> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 300,
-      child: i == 1 ? buildColumn() : buildColumn2(),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xCCF3377A),
+            Color(0xFF9C3788),
+            Color(0xFC6B3890),
+          ],
+        ),
+      ),
+      child: Center(
+        child: Card(
+          color: Colors.white,
+          elevation: 5,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Container(
+            width: 300,
+            height: 200,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                i == 1 ? buildColumn() : buildColumn2(),
+                GradientButton(
+                  increaseWidthBy: 150,
+                  increaseHeightBy: 4,
+                  callback: () {
+                    authentize();
+                  },
+                  gradient: Gradients.hotLinear,
+                  child: GradientText(
+                    "Login",
+                    shaderRect: Rect.fromLTWH(0.0, 0.0, 50.0, 50.0),
+                    gradient: Gradients.deepSpace,
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 

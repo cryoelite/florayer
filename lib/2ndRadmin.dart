@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+
 import 'package:florayer/tigger_icons.dart';
-
 import './floraFaunaData/ff.dart';
+import './ListOfFauna.dart';
+import './ListOfFlora.dart';
 
-class SeconderUE extends StatefulWidget {
+/* import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
+ */
+class Seconder extends StatefulWidget {
   @override
-  _SeconderUEState createState() => _SeconderUEState();
+  _SeconderState createState() => _SeconderState();
 }
 
-class _SeconderUEState extends State<SeconderUE> {
+class _SeconderState extends State<Seconder> {
   final enteredFauna = TextEditingController();
   final enteredFlora = TextEditingController();
   static var i = 0;
@@ -23,6 +28,7 @@ class _SeconderUEState extends State<SeconderUE> {
     } else {
       return;
     }
+    print(FF.flora);
   }
 
   void fillerFauna() {
@@ -41,16 +47,6 @@ class _SeconderUEState extends State<SeconderUE> {
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
-  static const vals = [
-    Text(
-      "Flora",
-      style: fontprops,
-    ),
-    Text(
-      "Fauna",
-      style: fontprops,
-    )
-  ];
   void setter(int si) {
     setState(() {
       i = si;
@@ -100,7 +96,33 @@ class _SeconderUEState extends State<SeconderUE> {
 //                color: Colors.white,
                           ),
                     ),
-                  )
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.dehaze,
+                      //            color: Colors.white,
+                      size: 32,
+                    ),
+                    title: Text(
+                      "FaunaData",
+                      style: TextStyle(
+//                color: Colors.white,
+                          ),
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.dehaze,
+                      //            color: Colors.white,
+                      size: 32,
+                    ),
+                    title: Text(
+                      "FloraData",
+                      style: TextStyle(
+//                color: Colors.white,
+                          ),
+                    ),
+                  ),
                 ],
                 currentIndex: i,
                 onTap: setter,
@@ -181,7 +203,7 @@ class _SeconderUEState extends State<SeconderUE> {
           ),
         ),
       );
-    } else {
+    } else if (i==1){
       return Card(
         margin: EdgeInsets.all(1),
         color: Colors.white,
@@ -248,6 +270,11 @@ class _SeconderUEState extends State<SeconderUE> {
           ),
         ),
       );
+    }else if(i==2){
+      return ListerFauna();
+    }
+    else{
+      return ListerFlora();
     }
   }
 }

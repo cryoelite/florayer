@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 
-import 'package:florayer/2ndroute.dart';
+import 'package:florayer/2ndRadmin.dart';
 import 'package:florayer/login.dart';
-import './startpage.dart';
 import 'package:florayer/2ndRUser.dart';
 import './loginData/up.dart';
+import './startpage.dart';
 
 class BasePage extends StatefulWidget {
   @override
@@ -26,18 +26,32 @@ class _BasePageState extends State<BasePage> {
       appBar: GradientAppBar(
         title: Center(
           child: Text(
-            i < 2 ? "Welcome," : "GTF",
+            i < 2 ? "Welcome" : "GTF",
             style: TextStyle(
               color: Colors.black,
             ),
           ),
         ),
-        gradient: LinearGradient(colors: UP.temp==0 ? [Colors.cyan, Colors.indigo] : [Colors.cyan, Colors.red[200]]),
+        gradient: LinearGradient(colors: [
+          Color(0xFFF3377A),
+          Color(0xFF9C3788),
+          Color(0xFF6B3890),
+        ]),
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Colors.black,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xCCF3377A),
+              Color(0xFF9C3788),
+              Color(0xFC6B3890),
+            ],
+          ),
+        ),
         child: checker(),
       ),
     );
@@ -51,12 +65,12 @@ class _BasePageState extends State<BasePage> {
     } else if (i == 1) {
       return Center(
         child: Card(
-          child: Loginner(setter),
           color: Colors.white,
           elevation: 5,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
+          child: Loginner(setter),
         ),
       );
     } else if (UP.temp == 1) {

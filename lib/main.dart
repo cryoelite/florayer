@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:florayer/basepage.dart';
-
 
 void main() => runApp(Base());
 
