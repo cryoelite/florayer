@@ -4,12 +4,7 @@ import 'package:florayer/basepage.dart';
 
 void main() => runApp(Base());
 
-class Base extends StatefulWidget {
-  @override
-  _BaseState createState() => _BaseState();
-}
-
-class _BaseState extends State<Base> {
+class Base extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,4 +12,4 @@ class _BaseState extends State<Base> {
       home: BasePage(),
     );
   }
-}
+}  

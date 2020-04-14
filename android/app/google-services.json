@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "655584976942",
+    "firebase_url": "https://florayerdb2.firebaseio.com",
+    "project_id": "florayerdb2",
+    "storage_bucket": "florayerdb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655584976942:android:e55ce661a08d98b778ffbf",
+        "android_client_info": {
+          "package_name": "go.cryoelite.florayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655584976942-unlfk11ac9e9b70kt8k9310i3o5fisiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC1PiRLNtKYdhInmujAV6K3ocwmCVEc_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655584976942-unlfk11ac9e9b70kt8k9310i3o5fisiv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
